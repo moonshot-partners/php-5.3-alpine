@@ -8,6 +8,7 @@ RUN docker-php-ext-configure gd --with-png-dir=/usr --with-jpeg-dir=/usr/include
 RUN echo "extension=apcu.so" >> /usr/local/etc/php/conf.d/php.ini
 RUN echo "extension=uploadprogress.so" >> /usr/local/etc/php/conf.d/php.ini
 RUN echo "apc.rfc1867 = 1" >> /usr/local/etc/php/conf.d/php.ini
+RUN docker-php-ext-install gd
 
 COPY . /var/www/html
 EXPOSE 80
